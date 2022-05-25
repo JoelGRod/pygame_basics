@@ -40,6 +40,7 @@ class Game():
 
             # 6º Screen Main Background color
             self.screen.fill(config.colors["white"])
+
             # Drawing in canvas
 
             ## Basic Draws
@@ -58,4 +59,44 @@ class Game():
             # 7º Update Screen and Clock
             pygame.display.update()
             self.clock.tick(config.fps)
-        
+
+
+# TODO: Manage multiple games OR manage just one
+'''
+Option I - Small Games
+src/
+    lib.py -> Main Manager
+    app.py
+    context/
+        game_1/ -> Domain + Domain module
+            main/
+                main_game.py -> Specific Game Manager
+                levels/
+                characters/
+                styles/
+                animations/
+                etc...
+            tests/
+        game_2/
+        game_3/
+        ...
+        shared/
+            main/
+            tests/
+
+Option II - Big Game
+src/
+    lib.py -> Main Manager / Big Game Manager
+    app.py
+    context/
+        level_1/ -> Domain + Domain module
+            main/
+            tests/
+        level_2/
+        level_3/
+        level_4/
+        ...
+        shared/
+            main/
+            tests/
+'''
