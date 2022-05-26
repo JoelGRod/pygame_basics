@@ -19,3 +19,63 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ? Suggested Game Structures
+'''
+Option I - Small Games
+src/
+    lib.py -> Main Manager
+    app.py
+    context/
+        game_name_1/ -> Domain + Domain module
+            main/
+                game_name_1_manager.py -> Game Manager
+                levels/
+                characters/
+                styles/
+                animations/
+                etc...
+            tests/
+        game_name_2/
+        game_name_3/
+        ...
+        shared/
+            main/
+            tests/
+
+Option II - Big Game
+src/
+    lib.py                      -> Main Manager
+    app.py                      -> Config Init
+    context/
+        game_name/              -> Domain
+            main/
+                game_manager.py -> Game Manager
+                main_menu/
+                level_1/        -> Domain Module
+                level_2/
+                level_3/
+                ...
+                shared/
+            tests/
+        shared/
+            main/
+            tests/
+
+Option III - Big Game (Not recommended)
+src/
+    lib.py -> Main Manager / Game Manager
+    app.py
+    context/
+        level_1/ -> Domain + Domain module
+            main/
+            tests/
+        level_2/
+        level_3/
+        level_4/
+        ...
+        shared/
+            main/
+            tests/
+'''
